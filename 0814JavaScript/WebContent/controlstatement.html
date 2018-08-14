@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제어문</title>
+</head>
+<body>
+
+</body>
+<script>
+	var year = 2018
+	//윤년여부를 확인 - if
+	//윤년의 조건 
+	//4의 배수이고 100의 배수가 아닌 경우 
+	//또는 400의 배수인 경우 
+	if(year%4 == 0 && year%100 != 0 || year%400 ==0){
+		document.writeln(year + "는 윤년")
+	}else{
+		document.writeln(year + "는 윤년이 아님")
+	}
+	
+	//메뉴 선택 - switch
+	/* switch(menu){
+	case 1:
+		document.writeln("한식")
+		break
+	case 2:
+		document.writeln("<br/>중식")
+		break
+	case 3:
+		document.writeln("<br/>양식")
+		break
+	default:
+		document.writeln("<br/>식사안함")
+		break
+	} */
+	
+	//2-1000까지 완전수의 개수를 출력 - 반복문
+	//완전수 - 자신을 제외한 약수의 합이 자기 자신인 수
+	//약수 - 나누어 떨어지는 수 
+	//완전수6 - 1,2,3,6  1+2+3 = 6 
+	var i = 2
+	var cnt = 0
+	while(i<1001){
+		var sum = 0
+		var m = 1
+		while(m<i){
+			if(i % m == 0){
+				sum = sum + m
+			}
+			m = m + 1
+		}
+		if(sum == i){
+			document.writeln("</br> 완전수:" + sum)
+			cnt = cnt + 1
+		}
+		i = i + 1 
+	}
+	document.writeln("<br/>완전수 개수: " + cnt) 
+	
+	//2-1000까지 소수의 개수
+	//소수(prime): 1 과 자신으로만 나누어 떨어지는 수
+	i = 2
+	cnt = 0
+	while(i<1001){
+		var m = 2
+		while (m<i){
+			if(i%m == 0) {
+				break
+			}
+			m = m + 1
+		}
+		if(m == i){
+			cnt = cnt + 1
+		}
+		i = i + 1
+	}
+	document.writeln("<br/>소수 개수: " + cnt)
+</script>
+</html>

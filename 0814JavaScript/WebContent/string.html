@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>string</title>
+</head>
+<body>
+
+</body>
+<script>
+	var str = "Hello World"
+	//문자열의 각 문자를 1개씩 출력
+	var i = 0
+	while(i<str.length){
+		document.writeln(str.charAt(i))
+		i = i + 1
+	}
+	
+	//문자의 존재여부 - indexof. lastIndexof
+	document.writeln(str.indexOf("o")) // 4
+	document.writeln(str.lastIndexOf("o")) //7
+	document.writeln(str.indexOf("k")) // -끝까지 찾았는데 없을 때 -1 출 
+	
+	//str을 공백을 기준으로 분리해서 출력
+	var ap = str.split(" ")
+	for(i in ap){
+		document.writeln("</br>" + ap[i])
+	}
+	
+	
+</script>
+</html>

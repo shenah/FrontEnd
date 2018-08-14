@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>for - each</title>
+</head>
+<body>
+
+</body>
+<script>
+	//배열을 생성
+	var ar = ["스티브잡스", "빌게이츠", "마크주커버그", "마윈"]
+	for (t in ar){
+		alert(t + ":" + ar[t])
+	}
+	//객체를 생성
+	var obj = {"name":"찰스 페졸드", "book":"Win API"}
+	for (t in obj){
+		alert(t + ":" + obj[t])
+	}
+	//location이라는 객체의 속성 확인
+	for (t in location){
+		document.writeln("<br/>" + t)
+	}
+</script>
+</html>

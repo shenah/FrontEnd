@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Instance</title>
+</head>
+<body>
+
+</body>
+<script>
+	//이름과 나이를 저장할 수 있는 속성을 만들고 
+	//이름과 나이를 하나의 문자열로 만들어서 리턴하는 함수를 생성
+	var person = {
+			name: "noname",
+			age:0,
+			toString: function(){
+				//객체 안에 있는 함수에서 객체 안에 있는 다른 속성을 호출할 때는 this.을 붙여야 합니다. 
+				return this.name + ":" + this.age
+			}
+	}
+	person.name = "관리자"
+	person["age"] = 35
+	document.writeln(person.toString()+ "<br/>")
+	
+	//자바스크립트 객체는 존재하지 않는 속성에 값을 대입하면 대입할 때 속성을 만들어서 저장합니다. - map 방식
+	person.phone = "01084759438"
+	document.writeln(person.phone + "<br/>")
+	
+	//person 모든 속성 확인
+	for(attr in person){
+		document.writeln(attr+ "<br/>")
+	}
+	
+	//생성자 - 이름과 나이를 갖는 생성자 
+	function Person(name, age){
+		this.name = name
+		this.age = age 
+		this.toString = function(){
+			return name + ":" + age
+		}
+	}
+	var obj1 = new Person("이순재",83)
+	var obj2 = new Person("백지영", 42)
+	
+	document.writeln(obj1+ "<br/>")
+</script>
+</html>
