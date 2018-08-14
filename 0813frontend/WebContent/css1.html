@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+	#pid{width:200px;
+		 backgrongd:#fdd;
+		 border:2px solid #123456;
+		 outline:2px solid #ffaa00;
+		 outline-offset:3px;
+		 resize:both;
+		 overflow:auto;
+		 }
+
+	#div1{background-color:papayawhip;
+		width:300px;
+		height:100px;
+		-webkit-transform:scale(0.5);
+		-moz-transform:scale(0.5);
+		-o-transform:scale(0.5);}
+	#div2{background-color:papayawhip;
+		width:300px;
+		height:100px;
+		-webkit-transform:rotate(30deg);
+		-moz-transform:rotate(30deg);
+		-o-transform:rotate(30deg);}
+	#div3{background-color:papayawhip;
+		width:300px;
+		height:100px;
+		-webkit-transform:skew(10deg, 20deg);
+		-moz-transform:skew(10deg, 20deg);
+		-o-transform:skew(10deg, 20deg);}
+	a{  display: block;
+		width:300px;
+		height:30px;
+		background:#ccffff;
+		
+		-webkit-transition:width 1.5s;}
+	a:hover{
+		width:400px;}
+</style>
+<title>CSS</title>
+
+</head>
+<body>
+	<h2>css - resize, outline</h2>
+	<p class="content" id="pid">
+	표준을 위해 크로스 브라우징할 때에 1픽셀의 오차도 없게 디자인하는 것이 크로스브라우징이 아니다.
+	정보 격차가 심하게 일어나거나 정보 누락이 생기지 않는다면 그 한도 내에서의 약한 오차는 넘어갈 수 있다고 본다.</p>
+	<div id="div1">크기변화</div>
+	<div id="div2">각도변화</div>
+	<div id="div3">비틀기</div>
+	
+	<a href="#">애니메이션 메뉴</a>
+</body>
+</html>
