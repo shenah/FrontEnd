@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ajax - json</title>
+
+</head>
+<body>
+	
+</body>
+<script>
+	//ajax 객체 만들기 
+	var request = new XMLHttpRequest()
+	//요청할 주소 만들기 
+	request.open('GET', 'data.json')
+	//요청하기 
+	request.send('')
+	//
+	request.onreadystatechange = function(){
+		if(request.readyState == 4){
+			if(request.status >= 200 && request.status < 300){
+				var json = request.responseText
+				document.writeln(json)
+				//읽어온 데이터 파싱 , table 로 출력
+				var ar = JSON.parse(json)
+				var output = ''
+				for(idx in ar){
+					output += "<div>"
+					output += "<h3>" + ar[idx].name + "</h3>"
+					output += "<p>" + ar[idx].pos + "</p>"
+					output += "</div>"
+				}
+				document.body.innerHTML = output
+			}else if(request.status >=400 && request.status <500){
+				document.writeln("클라이언트 오류:" + request.status)
+			}
+		}
+	}
+
+</script>
+
+<style>
+	div{ 
+		margin: 10px;
+		border: 3px Solid Green;
+		border-radius : 10px;
+		float: left;
+		width: 120px;
+		height: 100px;
+		text-align: center;
+		}
+	h3:hover{
+		color: Red;
+	}
+</style>
+</html>

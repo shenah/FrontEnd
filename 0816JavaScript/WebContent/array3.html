@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 배열 관련 함수</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//slice는 시작 위치와 마지막 바로 전 위치를 받아서 배열을 만들어주는 함수 
+	var ar = ["차범근", "반바스텐","굴리트", "클라이베르트", "베르칸프", "루프"]
+	var first = ar.slice(0,3)
+	document.writeln(first + "<br/>")
+	var second = ar.slice(3,6)
+	document.writeln(second + "<br/>")
+	
+	//filter는 매개변수 1개이고 boolean을 리턴하는 함수를 매개변수로 받아서 
+	//true만 가지고 새로운 배열을 만들어서 리턴 
+	//4글자 이상인 데이터를 추출하기 
+	var result = ar.filter(function(element){
+		  return element.length >= 4
+    })
+    document.writeln(result + "<br/>")
+	      
+	//"트"로 끝나는 데이터만 추출
+	result = ar.filter(function(element){
+		 return element.charAt(element.length - 1) == ''
+    })  
+	
+	//map은 리턴되는 데이터를 가지고 배열을 새로 생성 
+	result = ar.map(function(element){
+		if(element == null)
+			element = "이름없음"
+	        return element
+	})	         
+	document.writeln(result + "<br/>")
+	
+	//JSON 객체
+	var json = '["HTML", "CSS", "JavaScript"]'
+	result = JSON.parse(json)
+	for(idx in result ){
+		document.writeln(idx + ":" +result[idx]);
+	}
+	
+	//BOM 객체
+	window.open('http://www.google.co.kr', '구글', 'width=400, height=300, resizable=no' )
+	
+	//DOM 
+	
+</script>
+</html>

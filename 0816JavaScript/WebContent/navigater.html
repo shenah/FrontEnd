@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script>
+	//safari 에서 접속하면 구글 페이지로 보내기 
+	var ar =['chrome'] //모바일 운영체제가 여러 개 
+	var flag = false 
+	for(idx in ar){
+		document.writeln(ar[idx]+"<br/>")
+		if(navigator.userAgent.toLowerCase().indexOf(ar[idx]) >= 0){
+			flag = ture
+			break
+		} 
+	}
+	if(flag == true){
+		window.location = "https://www.google.co.kr"
+	}
+</script>
+</html>

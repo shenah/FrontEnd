@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열 생성과 사용</title>
+</head>
+<body>
+
+</body>
+<script>
+	//배열 생성
+	var girlgroup =["블랙핑크", "AOA", "레드벨벳"]
+	
+	//배열 추가
+	girlgroup.push("트와이스")// - 마지막에 추가. 스택을 구현하기 위해 만든 함수 
+	girlgroup.unshift("우주소녀")// - 처음에 추가. 큐를 구현하기 위해 만든 함수.
+	//배열 삭제
+	//document.writeln(girlgroup.pop() + "<br/>")//- 마지막 데이터 삭제. 스택을 구현하기 위해 만든 함수 
+	//document.writeln(girlgroup.shift() + "<br/><br/>")//- 처음 데이터 삭제. 스택을 구현하기 위해 만든 함수 
+	//배열의 모든 요소를 접근
+	for(temp in girlgroup){
+		document.writeln(girlgroup[temp] + "<br/>")
+	}
+	//배열 정렬
+	girlgroup.sort()
+	for(temp in girlgroup){
+		document.writeln(girlgroup[temp] + "<br/>")
+	}
+	
+	var scores = [198, 178, 87, 65, 99]
+	//숫자 배열이지만 문자열로 간주하고 정렬 - 첫번째 자리로 정렬
+	scores.sort()
+	for(temp in scores){
+		document.writeln(scores[temp] + "<br/>")
+	}
+	//숫자 내림차순 정렬 
+	scores.sort(function(left, right){
+	return right - left
+	}) 
+	for(temp in scores){
+		document.writeln(scores[temp] + "<br/>")
+	}
+</script>
+</html>
